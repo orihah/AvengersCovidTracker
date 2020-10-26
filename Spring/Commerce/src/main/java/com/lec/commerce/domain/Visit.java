@@ -19,13 +19,14 @@ public class Visit {
 	
 	@ManyToOne
     @JoinColumn(name = "user_id")
-    User user;
+    private User user;
 	
 	@ManyToOne
     @JoinColumn(name = "location_id")
-    Location location;
+    private Location location;
 	
 	private java.sql.Timestamp enterTime;
 	private java.sql.Timestamp leaveTime;
+	private boolean contact;
 	
 }

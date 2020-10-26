@@ -17,7 +17,10 @@ public class Location {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	private String Name;
+	private String name;
+	private String floor;
+	private String building;
+	
 	
 	@OneToMany(mappedBy = "location")
     Set<Visit> visits;

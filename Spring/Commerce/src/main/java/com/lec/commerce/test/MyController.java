@@ -54,10 +54,10 @@ public class MyController {
 		
 	}
 	
-	@GetMapping("/timefield")
+	@GetMapping("/visit_form")
 	public ModelAndView time() {	
 		ModelAndView time = new ModelAndView();	
-		time.setViewName("timefield");
+		time.setViewName("visit_form");
 		return time;
 		
 	}
