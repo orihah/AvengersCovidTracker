@@ -1,4 +1,5 @@
 package com.lec.commerce.domain;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class User {
 		private String password;
 		
 		@OneToMany(mappedBy = "user")
-	    Set<Visit> visits;
+	    List<Visit> visits;
 		
 
 	

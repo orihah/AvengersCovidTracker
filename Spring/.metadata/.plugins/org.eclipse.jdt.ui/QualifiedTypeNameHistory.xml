@@ -27,7 +27,6 @@
 <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
@@ -35,7 +34,6 @@
 <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="com.lec.commerce.repo.UserRepo"/>
 <fullyQualifiedTypeName name="com.lec.commerce.repo.VisitRepo"/>
 <fullyQualifiedTypeName name="com.lec.commerce.repo.LocationRepo"/>
 <fullyQualifiedTypeName name="com.lec.commerce.service.LocationService"/>
@@ -43,4 +41,8 @@
 <fullyQualifiedTypeName name="com.lec.commerce.service.VisitService"/>
 <fullyQualifiedTypeName name="com.lec.commerce.domain.User"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="com.lec.commerce.repo.UserRepo"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.lec.commerce.domain.Location"/>
+<fullyQualifiedTypeName name="com.lec.commerce.domain.Visit"/>
 </qualifiedTypeNameHistroy>

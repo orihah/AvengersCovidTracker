@@ -1,5 +1,6 @@
 package com.lec.commerce.domain;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,6 +24,6 @@ public class Location {
 	
 	
 	@OneToMany(mappedBy = "location")
-    Set<Visit> visits;
+    List<Visit> visits;
 
 }

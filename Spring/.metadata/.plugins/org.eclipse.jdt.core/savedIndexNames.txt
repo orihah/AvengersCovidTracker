@@ -48,7 +48,6 @@ INDEX VERSION 1.131+C:\Users\oriha\Desktop\Software Engineering\Spring\.metadata
 1019245439.index
 3588165629.index
 2154562670.index
-723746816.index
 3995152821.index
 296366471.index
 4017017558.index

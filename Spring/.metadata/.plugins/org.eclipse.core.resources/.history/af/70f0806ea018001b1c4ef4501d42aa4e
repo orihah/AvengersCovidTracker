@@ -1,0 +1,85 @@
+package com.lec.commerce.service;
+
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lec.commerce.domain.User;
+import com.lec.commerce.repo.UserRepo;
+
+@Service
+@Transactional
+public class UserService {
+	@Autowired 
+	private UserRepo userRepo;
+	
+	public int join(User user) {
+		validateUser(user);
+		userRepo.save(user);
+		return user.getId();
+	}
+	
+	public boolean verify(String userName, String password) {
+		List<User> users = userRepo.findById(userName);
+		if(users.isEmpty()) {
+			throw new IllegalStateException("no such id");
+		}
+		String userPass = users.get(0).getPassword();
+		if(userPass == password)
+			return true;
+		else
+		{
+			System.out.println(userPass);
+			return false;
+		}
+			
+	}
+	
+	public void validateUser(User user) {
+		List<User> users = userRepo.findById(user.getUserName());
+		if(!users.isEmpty()) {
+			throw new IllegalStateException("id exists");
+		}
+	}
+	
+	
+	public void dummyUsers() {
+		User u1 = new User();
+		u1.setEmail("u1@lec.com");
+		u1.setName("Jerry Smith");
+		u1.setPassword("1234");
+		u1.setTestResult(false);
+		u1.setUserName("user1");
+		join(u1);
+		
+		User u2 = new User();
+		u2.setEmail("u2@lec.com");
+		u2.setName("Bob Sacamano");
+		u2.setPassword("4321");
+		u2.setTestResult(true);
+		u2.setUserName("user2");
+		join(u2);
+		
+		User u3 = new User();
+		u3.setEmail("u3@lec.com");
+		u3.setName("Linda Belcher");
+		u3.setPassword("1212");
+		u3.setTestResult(false);
+		u3.setUserName("user3");
+		join(u3);
+		
+		User u4 = new User();
+		u4.setEmail("u4@lec.com");
+		u4.setName("Test Subject");
+		u4.setPassword("2121");
+		u4.setTestResult(false);
+		u4.setUserName("user4");
+		join(u4);
+		
+	}
+	
+}

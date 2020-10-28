@@ -23,6 +23,21 @@ public class UserService {
 		return user.getId();
 	}
 	
+	public boolean verify(String userName, String password) {
+		List<User> users = userRepo.findById(userName);
+		if(users.isEmpty()) {
+			throw new IllegalStateException("no such id");
+		}
+		else if(users.get(0).getPassword().compareTo(password) == 0)
+			return true;
+		else
+		{
+			System.out.println(users.get(0).getPassword());
+			return false;
+		}
+			
+	}
+	
 	public void validateUser(User user) {
 		List<User> users = userRepo.findById(user.getUserName());
 		if(!users.isEmpty()) {
