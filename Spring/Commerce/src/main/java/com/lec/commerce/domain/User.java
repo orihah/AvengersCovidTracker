@@ -1,4 +1,5 @@
 package com.lec.commerce.domain;
+
 import java.util.List;
 import java.util.Set;
 
@@ -12,68 +13,35 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class User {
-		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)
-		private Integer id;
-		private String name;
-		private Boolean testResult;
-		private String email;
-		private String userName;
-		private String password;
-		
-		@OneToMany(mappedBy = "user")
-	    List<Visit> visits;
-		public User() {
-			
-		}
-		public void setUserName(String userID) {
-			// TODO Auto-generated method stub
-			
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String name;
+	private Boolean testResult;
+	private String email;
+	private String userName;
+	private String password;
 
-		public void setPassword(String password2) {
-			// TODO Auto-generated method stub
-			
-		}
+	@OneToMany(mappedBy = "user")
+	List<Visit> visits;
 
-		public void setName(String name2) {
-			// TODO Auto-generated method stub
-			
-		}
+	public User(String name, String email, int id, String password, boolean testResult) {
 
-		public void setEmail(String email2) {
-			// TODO Auto-generated method stub
-			
-		}
-		public void setTestResult(boolean b) {
-			// TODO Auto-generated method stub
-			
-		}
+	}
 
-		public char[] getEmail() {
-			// TODO Auto-generated method stub
-			return null;
-		}
+	User CreateUser(String name, String email, int id, String password, boolean testResult) {
+		return new User(name, email, id, password, testResult);
 
-		public String getPassword() {
-			// TODO Auto-generated method stub
-			return null;
-		}
+	}
 
-		public int getId() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
+	boolean ConfirmUser(String name, String password) {
+		if (this.name == name && this.password == password) {
+			return true;
+		} else
+			return false;
+	}
 
-		public String getUserName() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		
-		
-
-	
 }

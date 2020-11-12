@@ -13,23 +13,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Location {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
 	private String floor;
 	private String building;
-	
-	
+
 	@OneToMany(mappedBy = "location")
-    List<Visit> visits;
+	List<Visit> visits;
 
+	public Location(Integer id, String name, String floor, String building) {
 
-	public int getId() {
-		// TODO Auto-generated method stub
-		return null;
+	}
+
+	Location CreateLocation(Integer id, String name, String floor, String building) {
+		return new Location(id, name, floor, building);
 	}
 
 }
