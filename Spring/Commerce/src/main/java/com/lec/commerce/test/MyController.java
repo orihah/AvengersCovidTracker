@@ -115,6 +115,8 @@ public class MyController {
 		return "verification";
 	}
 	
+	@SuppressWarnings("deprecation")
+	
 	@RequestMapping(value = "/enter", method = RequestMethod.GET)
 	public String enter(String userName, String locName, Integer eHour, Integer eMin, String date, 
 			Integer lHour, Integer lMin, String eampm, String lampm) {

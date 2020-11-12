@@ -26,4 +26,10 @@ public class Location {
 	@OneToMany(mappedBy = "location")
     List<Visit> visits;
 
+
+	public int getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

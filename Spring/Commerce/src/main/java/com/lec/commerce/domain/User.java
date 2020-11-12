@@ -25,6 +25,54 @@ public class User {
 		
 		@OneToMany(mappedBy = "user")
 	    List<Visit> visits;
+		public User() {
+			
+		}
+		public void setUserName(String userID) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setPassword(String password2) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setName(String name2) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setEmail(String email2) {
+			// TODO Auto-generated method stub
+			
+		}
+		public void setTestResult(boolean b) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public char[] getEmail() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public String getPassword() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public int getId() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		public String getUserName() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		
 		
 
 	
