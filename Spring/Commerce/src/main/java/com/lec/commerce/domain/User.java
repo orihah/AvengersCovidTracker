@@ -19,6 +19,7 @@ public class User {
 		private Integer id;
 		private String name;
 		private Boolean testResult;
+		private java.sql.Timestamp testDate;
 		private String email;
 		private String userName;
 		private String password;

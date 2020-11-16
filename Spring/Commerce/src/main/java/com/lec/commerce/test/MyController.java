@@ -1,5 +1,6 @@
 package com.lec.commerce.test;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,19 @@ public class MyController {
 	public ModelAndView warning() {	
 		ModelAndView warn = new ModelAndView();	
 		warn.setViewName("covid19_warning_page");
+		List<Object[]> pos = visitService.postiveVisits();
+		List<Object[]> vis = visitService.userVisit("user");
+//		for(int i = 0; i < pos.size(); i++)
+//			for(int j = 0; j < pos.get(i).length; j++)
+//				System.out.print((pos.get(i)[j])+ " ");
+			
+		for(int i = 0; i < vis.size(); i++) {
+			System.out.println("\n");
+		for(int j = 0; j < vis.get(i).length; j++)
+			System.out.print((vis.get(i)[j])+ " ");
+		}
+		
+		
 		return warn;
 		
 	}
@@ -123,9 +137,9 @@ public class MyController {
 		if(lampm.compareTo("P.M.") == 0)
 			lHour = lHour + 12;
 			
-		Integer month = Integer.parseInt(date.substring(0, 2));
-		Integer day = Integer.parseInt(date.substring(3, 5));
-		Integer year = Integer.parseInt(date.substring(6, 10));
+		Integer month = Integer.parseInt(date.split("/")[0]);
+		Integer day = Integer.parseInt(date.split("/")[1]);
+		Integer year = Integer.parseInt(date.split("/")[2]);
 		List<User> users = userRepo.findById(userName);
 		List<Location> locs = locRepo.findByName(locName);
 		System.out.println(userName);
@@ -151,14 +165,22 @@ public class MyController {
 		
 		return "personal_history_log";
 	}
-	
+	//visitService.check(uEnter, uLeave, pEnter, pLeave)
 	@RequestMapping(value = "/verified", method = RequestMethod.GET)
 	public String verified(String name, String password) {
 		System.out.println("userid " + name);
 		System.out.println("password " + password);
-		
-		if(userService.verify(name, password)) 
+		List<Object[]> pos = visitService.postiveVisits();
+		List<Object[]> vis = visitService.userVisit(name);
+		if(userService.verify(name, password)) { 
+			for(int i = 0; i < vis.size(); i++)
+				for(int j = 0; j < pos.size(); j++) {
+					if(visitService.check((int)vis.get(i)[4],(int)pos.get(j)[4],(Timestamp)vis.get(i)[2], (Timestamp)vis.get(i)[3], (Timestamp)pos.get(j)[2],(Timestamp) pos.get(j)[3]))
+					return "covid19_warning_page";
+				}
+
 			return "visit_form";
+		}
 		else
 			return
 					"verification";
