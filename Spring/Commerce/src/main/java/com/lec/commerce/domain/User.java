@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
-
+//creates the User entity with getter and setter notation
 @Entity
 @Getter @Setter
 public class User {
@@ -19,6 +19,7 @@ public class User {
 		private Integer id;
 		private String name;
 		private Boolean testResult;
+		private java.sql.Timestamp testDate;
 		private String email;
 		private String userName;
 		private String password;

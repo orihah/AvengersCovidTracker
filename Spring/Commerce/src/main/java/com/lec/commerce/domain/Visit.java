@@ -8,9 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 import lombok.Getter;
 import lombok.Setter;
-
+//creates the visit entity with getter and setter notation
 @Entity
 @Getter @Setter
 public class Visit {
@@ -29,6 +31,6 @@ public class Visit {
 	
 	private java.sql.Timestamp enterTime;
 	private java.sql.Timestamp leaveTime;
-	private boolean contact;
+
 	
 }

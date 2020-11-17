@@ -1,0 +1,68 @@
+package com.lec.commerce.service;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lec.commerce.domain.Location;
+import com.lec.commerce.domain.User;
+import com.lec.commerce.domain.Visit;
+import com.lec.commerce.repo.UserRepo;
+import com.lec.commerce.repo.VisitRepo;
+
+@Service
+@Transactional
+public class VisitService {
+	@Autowired 
+	private VisitRepo visitrepo;
+	
+	public int join(Visit visit) {
+		
+		visitrepo.save(visit);
+		return visit.getId();
+	}
+	
+	public List<Visit> userVisit(String userName){
+		List<Object[]> objVisits = visitrepo.findUserVisits(userName);
+		List<Visit> userVisits = new ArrayList<Visit>();
+		for(int i = 0; i < objVisits.size(); i++) {
+			Visit tmp = new Visit();
+			tmp.setId((Integer) objVisits.get(i)[0]);
+			tmp.setEnterTime((Timestamp) objVisits.get(i)[1]);
+			tmp.setLeaveTime(((Timestamp) objVisits.get(i)[2]));
+			tmp.setLocation((Location) objVisits.get(i)[3]);
+			tmp.setUser((User) objVisits.get(i)[4]);
+			userVisits.add(tmp);
+		}
+		return userVisits;
+	}
+	
+	public List<Visit> postiveVisits(){
+		List<Object[]> objVisits = visitrepo.findPositiveVisits();
+		List<Visit> posVisits = new ArrayList<Visit>();
+		for(int i = 0; i < objVisits.size(); i++) {
+			Visit tmp = new Visit();
+			tmp.setId((Integer) objVisits.get(i)[0]);
+			tmp.setEnterTime((Timestamp) objVisits.get(i)[1]);
+			tmp.setLeaveTime(((Timestamp) objVisits.get(i)[2]));
+			tmp.setLocation((Location) objVisits.get(i)[3]);
+			tmp.setUser((User) objVisits.get(i)[4]);
+			posVisits.add(tmp);
+		}
+		return posVisits;
+	}
+	
+	public boolean check(Location a, Location b, Timestamp uEnter, Timestamp uLeave, Timestamp pEnter, Timestamp pLeave) {
+		if(a == b && uEnter.compareTo(pLeave) <= 0 && uLeave.compareTo(pEnter) >= 0)
+			return true;
+		else
+			return false;
+		
+	}
+
+	
+}

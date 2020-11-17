@@ -1,0 +1,30 @@
+package com.lec.commerce.repo;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.lec.commerce.domain.User;
+import com.lec.commerce.domain.Visit;
+@Repository
+public class VisitRepo {
+	@PersistenceContext
+	private EntityManager em;
+	
+	public void save(Visit visit) {
+		em.persist(visit);
+	}
+	
+	public List<Visit> findUserVisits(String userName) {
+		return em.createQuery("select v from Visit v where v.userName = :userName").setParameter("userName", userName).getResultList();
+		
+	}
+	
+	public List<Visit> findPositiveVisits() {
+		return em.createQuery("SELECT v FROM Visit INNER JOIN User ON Visit.user_id=User.id where test_result = 1").getResultList();
+		
+	}
+}

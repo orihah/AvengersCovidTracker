@@ -1,9 +1,11 @@
 package com.lec.commerce.test;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +25,9 @@ import com.lec.commerce.service.VisitService;
 @Controller
 
 public class MyController {
+	
+	boolean loginStatus = false;
+	String currUser;
 	@Autowired 
 	private VisitRepo visitRepo;
 	@Autowired
@@ -35,7 +40,7 @@ public class MyController {
 	private UserService userService;
 	@Autowired
 	private VisitService visitService;
-	
+	//called for creating several test users
 	@GetMapping("/dummy")
 	public String dummyFill() {
 		userService.dummyUsers();
@@ -97,7 +102,7 @@ public class MyController {
 		return page;
 		
 	}
-	
+	//used to add new user, called from sign-up page redirects to sign-in
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String create(String userID, String password, String name, String email) {
 		System.out.println("userid " + userID);
@@ -114,7 +119,7 @@ public class MyController {
 		
 		return "verification";
 	}
-	
+	//logs a visit to the database, currently only uses 'user' as username.  Redirects to personal history log
 	@RequestMapping(value = "/enter", method = RequestMethod.GET)
 	public String enter(String userName, String locName, Integer eHour, Integer eMin, String date, 
 			Integer lHour, Integer lMin, String eampm, String lampm) {
@@ -123,24 +128,11 @@ public class MyController {
 		if(lampm.compareTo("P.M.") == 0)
 			lHour = lHour + 12;
 			
-		Integer month = Integer.parseInt(date.substring(0, 2));
-		Integer day = Integer.parseInt(date.substring(3, 5));
-		Integer year = Integer.parseInt(date.substring(6, 10));
+		Integer month = Integer.parseInt(date.split("/")[0]);
+		Integer day = Integer.parseInt(date.split("/")[1]);
+		Integer year = Integer.parseInt(date.split("/")[2]);
 		List<User> users = userRepo.findById(userName);
 		List<Location> locs = locRepo.findByName(locName);
-		System.out.println(userName);
-		System.out.println(users.get(0).getEmail());
-		System.out.println(locName);
-		System.out.println(locs.get(0).getId());
-		System.out.println(eHour);
-		System.out.println(eMin);
-		System.out.println(lHour);
-		System.out.println(lMin);
-		System.out.println(month);
-		System.out.println(day);
-		System.out.println(year);
-		
-		
 		
 		Visit dvisit = new Visit();
 		dvisit.setUser(userRepo.findById(userName).get(0));
@@ -151,14 +143,35 @@ public class MyController {
 		
 		return "personal_history_log";
 	}
-	
+	//first checks for valid log-in, then user visits against positive visits.  If valid log-in and no contact redirects to visit log, if contact redirect to warning page, if non-valid login back to sign-in
 	@RequestMapping(value = "/verified", method = RequestMethod.GET)
-	public String verified(String name, String password) {
+	public String verified(String name, String password, Model model) {
+		
+		model.addAttribute("userid", name);
 		System.out.println("userid " + name);
 		System.out.println("password " + password);
-		
-		if(userService.verify(name, password)) 
+		List<Object[]> pos = visitService.postiveVisits();
+		List<Object[]> vis = visitService.userVisit(name);
+		for(int i = 0; i < pos.size(); i++)
+		{
+			System.out.println();
+			for(int j = 0; j < pos.get(i).length; j++) {
+				System.out.print(pos.get(i)[j] + " ");
+			}
+		}
+		if(userService.verify(name, password)) { 
+			for(int i = 0; i < vis.size(); i++)
+				for(int j = 0; j < pos.size(); j++) {
+					if(visitService.check((int)vis.get(i)[3],(int)pos.get(j)[3],(Timestamp)vis.get(i)[1], (Timestamp)vis.get(i)[2], (Timestamp)pos.get(j)[1],(Timestamp) pos.get(j)[2])) {
+					loginStatus = true;
+					currUser = name;
+					return "covid19_warning_page";
+					}
+				}
+			currUser = name;
+			loginStatus = true;
 			return "visit_form";
+		}
 		else
 			return
 					"verification";

@@ -16,7 +16,7 @@ import com.lec.commerce.repo.UserRepo;
 public class UserService {
 	@Autowired 
 	private UserRepo userRepo;
-	
+	//add user after validating that username is not already taken
 	public int join(User user) {
 		validateUser(user);
 		userRepo.save(user);
@@ -38,6 +38,8 @@ public class UserService {
 			
 	}
 	
+	
+	//verify username isnt taken
 	public void validateUser(User user) {
 		List<User> users = userRepo.findById(user.getUserName());
 		if(!users.isEmpty()) {
@@ -45,7 +47,7 @@ public class UserService {
 		}
 	}
 	
-	
+	//adds serveral users to the databse
 	public void dummyUsers() {
 		User u1 = new User();
 		u1.setEmail("u1@lec.com");

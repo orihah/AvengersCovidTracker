@@ -16,7 +16,7 @@ public class LocationService {
 	@Autowired 
 	private LocationRepo locationrepo;
 	
-	
+	//Service to add to databse
 	public int join(Location location) {
 		locationrepo.save(location);
 		return location.getId();

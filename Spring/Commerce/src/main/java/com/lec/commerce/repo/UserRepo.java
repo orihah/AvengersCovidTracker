@@ -13,11 +13,11 @@ public class UserRepo {
 	
 	@PersistenceContext
 	private EntityManager em;
-
+	//saves user to database
 	public void save(User user) {
 		em.persist(user);
 	}
-
+	//returns a list of users matching username
 	public List<User> findById(String userName) {
 		return em.createQuery("select n from User n where n.userName = :userName").setParameter("userName", userName).getResultList();
 		
