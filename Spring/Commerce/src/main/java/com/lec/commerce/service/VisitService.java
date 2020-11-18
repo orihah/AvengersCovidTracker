@@ -42,4 +42,8 @@ public class VisitService {
 			return false;
 		
 	}
+	
+	public void resetVisits() {
+		visitrepo.resetVisits();
+	}
 }

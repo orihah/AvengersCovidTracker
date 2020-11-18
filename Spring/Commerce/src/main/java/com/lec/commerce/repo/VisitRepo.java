@@ -23,7 +23,7 @@ public class VisitRepo {
 		
 		//return em.createQuery("select v from Visit v where v.userName = :userName").setParameter("userName", userName).getResultList();
 		String query = "SELECT Visit.* FROM commerce.visit INNER JOIN commerce.user ON visit.user_id=user.id where user_name = \""+userName+"\";";
-		System.out.println(query);
+		//System.out.println(query);
 		Query q = em.createNativeQuery(query);
 		return q.getResultList();
 	}
@@ -33,5 +33,9 @@ public class VisitRepo {
 		return q.getResultList();
 	}
 	
+	public void resetVisits() {
+		String q = "delete from visit where leave_time < DATE_SUB(NOW(),INTERVAL 15 DAY);" ;
+		em.createNativeQuery(q).executeUpdate();
+	}
 	
 }

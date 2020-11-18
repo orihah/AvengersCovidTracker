@@ -23,6 +23,16 @@ public class UserService {
 		return user.getId();
 	}
 	
+	public void statusUpdate(String userName, String date) {
+		String reDate = date.split("/")[2] + "/" + date.split("/")[0] + "/" + date.split("/")[1];
+		//System.out.println(reDate);
+		userRepo.updateStatus(userName, reDate);
+	}
+	
+	public void statusReset() {
+		userRepo.resetStatus();
+	}
+	
 	public boolean verify(String userName, String password) {
 		List<User> users = userRepo.findById(userName);
 		if(users.isEmpty()) {

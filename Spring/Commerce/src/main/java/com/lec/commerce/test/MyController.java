@@ -105,11 +105,11 @@ public class MyController {
 	//used to add new user, called from sign-up page redirects to sign-in
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String create(String userID, String password, String name, String email) {
-		System.out.println("userid " + userID);
-		System.out.println("password " + password);
-		System.out.println("name " + name);
-		System.out.println("email " + email);
-		
+//		System.out.println("userid " + userID);
+//		System.out.println("password " + password);
+//		System.out.println("name " + name);
+//		System.out.println("email " + email);
+//		
 		User duser = new User();
 		duser.setUserName(userID);
 		duser.setPassword(password);
@@ -131,35 +131,46 @@ public class MyController {
 		Integer month = Integer.parseInt(date.split("/")[0]);
 		Integer day = Integer.parseInt(date.split("/")[1]);
 		Integer year = Integer.parseInt(date.split("/")[2]);
-		List<User> users = userRepo.findById(userName);
+		System.out.println(year);
+		List<User> users = userRepo.findById(currUser);
 		List<Location> locs = locRepo.findByName(locName);
-		
+		System.out.println(currUser);
 		Visit dvisit = new Visit();
-		dvisit.setUser(userRepo.findById(userName).get(0));
+		dvisit.setUser(userRepo.findById(currUser).get(0));
 		dvisit.setLocation(locRepo.findByName(locName).get(0));
-		dvisit.setEnterTime(new java.sql.Timestamp(year, month, day, eHour, eMin, 0, 0));
-		dvisit.setLeaveTime(new java.sql.Timestamp(year, month, day, lHour, lMin, 0, 0));
+		dvisit.setEnterTime(new java.sql.Timestamp(year-1900, month-1, day, eHour, eMin, 0, 0));
+		dvisit.setLeaveTime(new java.sql.Timestamp(year-1900, month-1, day, lHour, lMin, 0, 0));
 		int savedId = visitService.join(dvisit);
 		
 		return "personal_history_log";
 	}
+	
+	@RequestMapping(value= "/statusUpdate", method = RequestMethod.GET)
+		public String statusUpdate(String date) {
+		userService.statusUpdate(currUser, date);
+		return "personal_history_log";
+	}
+	
+	
 	//first checks for valid log-in, then user visits against positive visits.  If valid log-in and no contact redirects to visit log, if contact redirect to warning page, if non-valid login back to sign-in
 	@RequestMapping(value = "/verified", method = RequestMethod.GET)
 	public String verified(String name, String password, Model model) {
 		
 		model.addAttribute("userid", name);
-		System.out.println("userid " + name);
-		System.out.println("password " + password);
+//		System.out.println("userid " + name);
+//		System.out.println("password " + password);
 		List<Object[]> pos = visitService.postiveVisits();
 		List<Object[]> vis = visitService.userVisit(name);
-		for(int i = 0; i < pos.size(); i++)
-		{
-			System.out.println();
-			for(int j = 0; j < pos.get(i).length; j++) {
-				System.out.print(pos.get(i)[j] + " ");
-			}
-		}
+//		for(int i = 0; i < pos.size(); i++)
+//		{
+//			System.out.println();
+//			for(int j = 0; j < pos.get(i).length; j++) {
+//				System.out.print(pos.get(i)[j] + " ");
+//			}
+//		}
 		if(userService.verify(name, password)) { 
+			userService.statusReset();
+			visitService.resetVisits();
 			for(int i = 0; i < vis.size(); i++)
 				for(int j = 0; j < pos.size(); j++) {
 					if(visitService.check((int)vis.get(i)[3],(int)pos.get(j)[3],(Timestamp)vis.get(i)[1], (Timestamp)vis.get(i)[2], (Timestamp)pos.get(j)[1],(Timestamp) pos.get(j)[2])) {
