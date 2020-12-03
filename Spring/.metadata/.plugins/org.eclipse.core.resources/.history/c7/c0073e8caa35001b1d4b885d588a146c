@@ -1,0 +1,441 @@
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Personal History Log</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/personal_history_log/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/personal_history_log/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+  
+  <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+         url = "jdbc:mysql://localhost/commerce"
+         user = "root"  password = "theavengers"/>
+ 
+      <sql:query dataSource = "${snapshot}" var = "result">
+         SELECT * from visit where user_id = 5;
+      </sql:query>
+      
+  	<%ArrayList<String> st = new ArrayList<String>(); %>
+  	
+  	<c:forEach var = "row" items = "${result.rows}">
+  			<% 
+  				st.add("test");
+               
+             
+             %>
+               
+    </c:forEach>
+  	
+    <div id="base" class="">
+
+      <!-- Unnamed (Image) -->
+      <div id="u40" class="ax_default image">
+        <img id="u40_img" class="img " src="images/verification/u6.png"/>
+        <div id="u40_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u41" class="ax_default image">
+        <img id="u41_img" class="img " src="images/verification/u3.png"/>
+        <div id="u41_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u42" class="ax_default image">
+        <img id="u42_img" class="img " src="images/verification/u17.png"/>
+        <div id="u42_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u43" class="ax_default heading_1">
+        <div id="u43_div" class=""></div>
+        <div id="u43_text" class="text ">
+          <p><span>Commerce Bank</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Line) -->
+      <div id="u44" class="ax_default line">
+        <img id="u44_img" class="img " src="images/personal_history_log/u44.svg"/>
+        <div id="u44_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Table) -->
+      <div id="u45" class="ax_default">
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u46" class="ax_default table_cell">
+          <img id="u46_img" class="img " src="images/personal_history_log/u46.png"/>
+          <div id="u46_text" class="text ">
+            <p><span>Start Time</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u47" class="ax_default table_cell">
+          <img id="u47_img" class="img " src="images/personal_history_log/u47.png"/>
+          <div id="u47_text" class="text ">
+            <p><span>End Time</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u48" class="ax_default table_cell">
+          <img id="u48_img" class="img " src="images/personal_history_log/u48.png"/>
+          <div id="u48_text" class="text ">
+            <p><span>Room Location</span></p>
+          </div>
+        </div>
+
+        <!-- start1 (Table Cell) -->
+        <div id="u49" class="ax_default table_cell" data-label="start1">
+          <img id="u49_img" class="img " src="images/personal_history_log/start1_u49.png"/>
+          <div id="u49_text" class="text ">
+            <p><span>"${st.get(0)}"</span></p>
+          </div>
+        </div>
+
+        <!-- end1 (Table Cell) -->
+        <div id="u50" class="ax_default table_cell" data-label="end1">
+          <img id="u50_img" class="img " src="images/personal_history_log/end1_u50.png"/>
+          <div id="u50_text" class="text ">
+            <p><span>et1</span></p>
+          </div>
+        </div>
+
+        <!-- room1 (Table Cell) -->
+        <div id="u51" class="ax_default table_cell" data-label="room1">
+          <img id="u51_img" class="img " src="images/personal_history_log/room1_u51.png"/>
+          <div id="u51_text" class="text ">
+            <p><span>rm1</span></p>
+          </div>
+        </div>
+
+        <!-- start2 (Table Cell) -->
+        <div id="u52" class="ax_default table_cell" data-label="start2">
+          <img id="u52_img" class="img " src="images/personal_history_log/start2_u52.png"/>
+          <div id="u52_text" class="text ">
+            <p><span>st2</span></p>
+          </div>
+        </div>
+
+        <!-- end2 (Table Cell) -->
+        <div id="u53" class="ax_default table_cell" data-label="end2">
+          <img id="u53_img" class="img " src="images/personal_history_log/end2_u53.png"/>
+          <div id="u53_text" class="text ">
+            <p><span>et2</span></p>
+          </div>
+        </div>
+
+        <!-- room2 (Table Cell) -->
+        <div id="u54" class="ax_default table_cell" data-label="room2">
+          <img id="u54_img" class="img " src="images/personal_history_log/room2_u54.png"/>
+          <div id="u54_text" class="text ">
+            <p><span>rm2</span></p>
+          </div>
+        </div>
+
+        <!-- start3 (Table Cell) -->
+        <div id="u55" class="ax_default table_cell" data-label="start3">
+          <img id="u55_img" class="img " src="images/personal_history_log/start3_u55.png"/>
+          <div id="u55_text" class="text ">
+            <p><span>st3</span></p>
+          </div>
+        </div>
+
+        <!-- end3 (Table Cell) -->
+        <div id="u56" class="ax_default table_cell" data-label="end3">
+          <img id="u56_img" class="img " src="images/personal_history_log/end3_u56.png"/>
+          <div id="u56_text" class="text ">
+            <p><span>et3</span></p>
+          </div>
+        </div>
+
+        <!-- room3 (Table Cell) -->
+        <div id="u57" class="ax_default table_cell" data-label="room3">
+          <img id="u57_img" class="img " src="images/personal_history_log/room3_u57.png"/>
+          <div id="u57_text" class="text ">
+            <p><span>rm3</span></p>
+          </div>
+        </div>
+
+        <!-- start4 (Table Cell) -->
+        <div id="u58" class="ax_default table_cell" data-label="start4">
+          <img id="u58_img" class="img " src="images/personal_history_log/start3_u55.png"/>
+          <div id="u58_text" class="text ">
+            <p><span>st4</span></p>
+          </div>
+        </div>
+
+        <!-- end4 (Table Cell) -->
+        <div id="u59" class="ax_default table_cell" data-label="end4">
+          <img id="u59_img" class="img " src="images/personal_history_log/end3_u56.png"/>
+          <div id="u59_text" class="text ">
+            <p><span>wt4</span></p>
+          </div>
+        </div>
+
+        <!-- room4 (Table Cell) -->
+        <div id="u60" class="ax_default table_cell" data-label="room4">
+          <img id="u60_img" class="img " src="images/personal_history_log/room3_u57.png"/>
+          <div id="u60_text" class="text ">
+            <p><span>rm4</span></p>
+          </div>
+        </div>
+
+        <!-- start5 (Table Cell) -->
+        <div id="u61" class="ax_default table_cell" data-label="start5">
+          <img id="u61_img" class="img " src="images/personal_history_log/start5_u61.png"/>
+          <div id="u61_text" class="text ">
+            <p><span>st5</span></p>
+          </div>
+        </div>
+
+        <!-- end5 (Table Cell) -->
+        <div id="u62" class="ax_default table_cell" data-label="end5">
+          <img id="u62_img" class="img " src="images/personal_history_log/end5_u62.png"/>
+          <div id="u62_text" class="text ">
+            <p><span>wt5</span></p>
+          </div>
+        </div>
+
+        <!-- room5 (Table Cell) -->
+        <div id="u63" class="ax_default table_cell" data-label="room5">
+          <img id="u63_img" class="img " src="images/personal_history_log/room5_u63.png"/>
+          <div id="u63_text" class="text ">
+            <p><span>rm5</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u64" class="ax_default paragraph">
+        <div id="u64_div" class=""></div>
+        <div id="u64_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u65" class="ax_default image">
+        <img id="u65_img" class="img " src="images/verification/u1.png"/>
+        <div id="u65_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u66" class="ax_default button">
+        <img id="u66_img" class="img " src="images/personal_history_log/u66.svg"/>
+        <div id="u66_text" class="text ">
+          <p><span>Visit Form</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u67" class="ax_default button">
+        <img id="u67_img" class="img " src="images/personal_history_log/u67.svg"/>
+        <div id="u67_text" class="text ">
+          <p><span>Sign out</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u68" class="ax_default button">
+        <img id="u68_img" class="img " src="images/personal_history_log/u66.svg"/>
+        <div id="u68_text" class="text ">
+          <p><span>Case Form</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u69" class="ax_default button">
+        <img id="u69_img" class="img " src="images/personal_history_log/u69.svg"/>
+        <div id="u69_text" class="text ">
+          <p><span>Personal History Log</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u70" class="ax_default heading_1">
+        <div id="u70_div" class=""></div>
+        <div id="u70_text" class="text ">
+          <p><span>COVID - 19 Employee Log</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u71" class="ax_default heading_1">
+        <div id="u71_div" class=""></div>
+        <div id="u71_text" class="text ">
+          <p><span>Personal History Log</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u72" class="ax_default text_area">
+        <div id="u72_div" class=""></div>
+        <textarea id="u72_input" class="u72_input">Explanation would go here.
+</textarea>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u73" class="ax_default image">
+        <img id="u73_img" class="img " src="images/verification/u2.png"/>
+        <div id="u73_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u74" class="ax_default button">
+        <div id="u74_div" class=""></div>
+        <div id="u74_text" class="text ">
+          <p><span>Go To Warning Page</span></p>
+        </div>
+      </div>
+
+      <!-- Select1 (Radio Button) -->
+      <div id="u75" class="ax_default radio_button selected" data-label="Select1" selectiongroup="Entry Selection">
+        <label id="u75_input_label" for="u75_input" style="position: absolute; left: 0px;">
+          <img id="u75_img" class="img " src="images/personal_history_log/select1_u75_selected.svg"/>
+          <div id="u75_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u75_input" type="radio" value="radio" name="Entry Selection"/>
+      </div>
+
+      <!-- Select2 (Radio Button) -->
+      <div id="u76" class="ax_default radio_button" data-label="Select2" selectiongroup="Entry Selection">
+        <label id="u76_input_label" for="u76_input" style="position: absolute; left: 0px;">
+          <img id="u76_img" class="img " src="images/personal_history_log/select2_u76.svg"/>
+          <div id="u76_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u76_input" type="radio" value="radio" name="Entry Selection"/>
+      </div>
+
+      <!-- Select3 (Radio Button) -->
+      <div id="u77" class="ax_default radio_button" data-label="Select3" selectiongroup="Entry Selection">
+        <label id="u77_input_label" for="u77_input" style="position: absolute; left: 0px;">
+          <img id="u77_img" class="img " src="images/personal_history_log/select3_u77.svg"/>
+          <div id="u77_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u77_input" type="radio" value="radio" name="Entry Selection"/>
+      </div>
+
+      <!-- Select1 (Radio Button) -->
+      <div id="u78" class="ax_default radio_button" data-label="Select1" selectiongroup="Entry Selection">
+        <label id="u78_input_label" for="u78_input" style="position: absolute; left: 0px;">
+          <img id="u78_img" class="img " src="images/personal_history_log/select1_u78.svg"/>
+          <div id="u78_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u78_input" type="radio" value="radio" name="Entry Selection"/>
+      </div>
+
+      <!-- Select1 (Radio Button) -->
+      <div id="u79" class="ax_default radio_button" data-label="Select1" selectiongroup="Entry Selection">
+        <label id="u79_input_label" for="u79_input" style="position: absolute; left: 0px;">
+          <img id="u79_img" class="img " src="images/personal_history_log/select1_u79.svg"/>
+          <div id="u79_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u79_input" type="radio" value="radio" name="Entry Selection"/>
+      </div>
+
+      <!-- startInput (Text Field) -->
+      <div id="u80" class="ax_default text_field" data-label="startInput">
+        <div id="u80_div" class=""></div>
+        <input id="u80_input" type="text" value="" class="u80_input"/>
+      </div>
+
+      <!-- endInput (Text Field) -->
+      <div id="u81" class="ax_default text_field" data-label="endInput">
+        <div id="u81_div" class=""></div>
+        <input id="u81_input" type="text" value="" class="u81_input"/>
+      </div>
+
+      <!-- roomInput (Droplist) -->
+      <div id="u82" class="ax_default droplist" data-label="roomInput">
+        <div id="u82_div" class=""></div>
+        <select id="u82_input" class="u82_input">
+          <option class="u82_input_option" value="Meeting Room A">Meeting Room A</option>
+          <option class="u82_input_option" value="Meeting Room B">Meeting Room B</option>
+          <option class="u82_input_option" value="Meeting Room C">Meeting Room C</option>
+          <option class="u82_input_option" value="Meeting Room D">Meeting Room D</option>
+          <option class="u82_input_option" value="Break Room 1">Break Room 1</option>
+          <option class="u82_input_option" value="Break Room 2">Break Room 2</option>
+          <option class="u82_input_option" value="Break Room 3">Break Room 3</option>
+        </select>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u83" class="ax_default button">
+        <div id="u83_div" class=""></div>
+        <div id="u83_text" class="text ">
+          <p><span>Submit Changes</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

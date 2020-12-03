@@ -18,7 +18,7 @@ public class LocationRepo{
 	public void save(Location location) {
 		em.persist(location);
 	}
-	//returns a locaiton by name
+	//returns a location by name
 	public List<Location> findByName(String name) {
 		return em.createQuery("select n from Location n where n.name = :name").setParameter("name", name).getResultList();
 		

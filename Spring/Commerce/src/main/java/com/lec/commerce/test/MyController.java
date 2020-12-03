@@ -51,21 +51,22 @@ public class MyController {
 	@GetMapping("/verification.html")
 	public ModelAndView verification() {	
 		ModelAndView veri = new ModelAndView();	
-		veri.setViewName("verification");
+		veri.setViewName("verification.html");
 		return veri;
 	}
 	
 	@GetMapping("/case_form.html")
 	public ModelAndView case_form() {	
 		ModelAndView case_form = new ModelAndView();	
-		case_form.setViewName("case_form");
+		case_form.setViewName("case_form.html");
 		return case_form;
 	}
 	
 	@GetMapping("/personal_history_log.html")
 	public ModelAndView personal() {	
 		ModelAndView personal = new ModelAndView();	
-		personal.setViewName("personal_history_log");
+		personal.addObject("userid", 5);
+		personal.setViewName("personal_history_log.jsp");
 		return personal;
 	}
 	
@@ -74,7 +75,7 @@ public class MyController {
 	@GetMapping("/covid19_warning_page.html")
 	public ModelAndView warning() {	
 		ModelAndView warn = new ModelAndView();	
-		warn.setViewName("covid19_warning_page");
+		warn.setViewName("covid19_warning_page.html");
 		return warn;
 		
 	}
@@ -82,7 +83,7 @@ public class MyController {
 	@GetMapping("/visit_form.html")
 	public ModelAndView time() {	
 		ModelAndView time = new ModelAndView();	
-		time.setViewName("visit_form");
+		time.setViewName("visit_form.html");
 		return time;
 		
 	}
@@ -90,26 +91,23 @@ public class MyController {
 	@GetMapping("/sign-up.html")
 	public ModelAndView sign() {	
 		ModelAndView time = new ModelAndView();	
-		time.setViewName("sign-up");
+		time.setViewName("sign-up.html");
 		return time;
 		
 	}
+
 	
 	@GetMapping("/profile_log.html")
 	public ModelAndView profile() {	
 		ModelAndView page = new ModelAndView();	
-		page.setViewName("profile_log");
+		page.setViewName("profile_log.html");
 		return page;
 		
 	}
 	//used to add new user, called from sign-up page redirects to sign-in
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String create(String userID, String password, String name, String email) {
-//		System.out.println("userid " + userID);
-//		System.out.println("password " + password);
-//		System.out.println("name " + name);
-//		System.out.println("email " + email);
-//		
+		
 		User duser = new User();
 		duser.setUserName(userID);
 		duser.setPassword(password);
@@ -119,7 +117,7 @@ public class MyController {
 		
 		return "verification";
 	}
-	//logs a visit to the database, currently only uses 'user' as username.  Redirects to personal history log
+
 	@RequestMapping(value = "/enter", method = RequestMethod.GET)
 	public String enter(String userName, String locName, Integer eHour, Integer eMin, String date, 
 			Integer lHour, Integer lMin, String eampm, String lampm) {
@@ -157,17 +155,10 @@ public class MyController {
 	public String verified(String name, String password, Model model) {
 		
 		model.addAttribute("userid", name);
-//		System.out.println("userid " + name);
-//		System.out.println("password " + password);
+
 		List<Object[]> pos = visitService.postiveVisits();
 		List<Object[]> vis = visitService.userVisit(name);
-//		for(int i = 0; i < pos.size(); i++)
-//		{
-//			System.out.println();
-//			for(int j = 0; j < pos.get(i).length; j++) {
-//				System.out.print(pos.get(i)[j] + " ");
-//			}
-//		}
+
 		if(userService.verify(name, password)) { 
 			userService.statusReset();
 			visitService.resetVisits();

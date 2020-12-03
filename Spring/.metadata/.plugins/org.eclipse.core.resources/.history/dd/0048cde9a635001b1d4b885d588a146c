@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visit Form</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/visit_form/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/visit_form/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Image) -->
+      <div id="u105" class="ax_default image">
+        <img id="u105_img" class="img " src="images/visit_form/u105.png"/>
+        <div id="u105_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u106" class="ax_default image">
+        <img id="u106_img" class="img " src="images/verification/u17.png"/>
+        <div id="u106_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u107" class="ax_default image">
+        <img id="u107_img" class="img " src="images/verification/u1.png"/>
+        <div id="u107_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u108" class="ax_default image">
+        <img id="u108_img" class="img " src="images/verification/u2.png"/>
+        <div id="u108_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u109" class="ax_default image">
+        <img id="u109_img" class="img " src="images/verification/u6.png"/>
+        <div id="u109_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u110" class="ax_default" data-left="426" data-top="252" data-width="413" data-height="377">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u111" class="ax_default label">
+          <div id="u111_div" class=""></div>
+          <div id="u111_text" class="text ">
+            <p><span>Start Time:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u112" class="ax_default label">
+          <div id="u112_div" class=""></div>
+          <div id="u112_text" class="text ">
+            <p><span>End Time:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u113" class="ax_default button">
+          <div id="u113_div" class=""></div>
+          <div id="u113_text" class="text ">
+            <p><span>Submit</span></p>
+          </div>
+        </div>
+
+        <!-- EndHourInput (Droplist) -->
+        <div id="u114" class="ax_default droplist" data-label="EndHourInput">
+          <div id="u114_div" class=""></div>
+          <select id="u114_input" class="u114_input">
+            <option class="u114_input_option" value="1">1</option>
+            <option class="u114_input_option" value="2">2</option>
+            <option class="u114_input_option" value="3">3</option>
+            <option class="u114_input_option" value="4">4</option>
+            <option class="u114_input_option" value="5">5</option>
+            <option class="u114_input_option" value="6">6</option>
+            <option class="u114_input_option" value="7">7</option>
+            <option class="u114_input_option" value="8">8</option>
+            <option class="u114_input_option" value="9">9</option>
+            <option class="u114_input_option" value="10">10</option>
+            <option class="u114_input_option" value="11">11</option>
+            <option class="u114_input_option" value="12">12</option>
+          </select>
+        </div>
+
+        <!-- StartHourInput (Droplist) -->
+        <div id="u115" class="ax_default droplist" data-label="StartHourInput">
+          <div id="u115_div" class=""></div>
+          <select id="u115_input" class="u115_input">
+            <option class="u115_input_option" value="1">1</option>
+            <option class="u115_input_option" value="2">2</option>
+            <option class="u115_input_option" value="3">3</option>
+            <option class="u115_input_option" value="4">4</option>
+            <option class="u115_input_option" value="5">5</option>
+            <option class="u115_input_option" value="6">6</option>
+            <option class="u115_input_option" value="7">7</option>
+            <option class="u115_input_option" value="8">8</option>
+            <option class="u115_input_option" value="9">9</option>
+            <option class="u115_input_option" value="10">10</option>
+            <option class="u115_input_option" value="11">11</option>
+            <option class="u115_input_option" value="12">12</option>
+          </select>
+        </div>
+
+        <!-- eAmPm (Droplist) -->
+        <div id="u116" class="ax_default droplist" data-label="eAmPm">
+          <div id="u116_div" class=""></div>
+          <select id="u116_input" class="u116_input">
+            <option class="u116_input_option" value="A.M.">A.M.</option>
+            <option class="u116_input_option" value="P.M.">P.M.</option>
+          </select>
+        </div>
+
+        <!-- lAmPm (Droplist) -->
+        <div id="u117" class="ax_default droplist" data-label="lAmPm">
+          <div id="u117_div" class=""></div>
+          <select id="u117_input" class="u117_input">
+            <option class="u117_input_option" value="A.M.">A.M.</option>
+            <option class="u117_input_option" value="P.M.">P.M.</option>
+          </select>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u118" class="ax_default heading_1">
+          <div id="u118_div" class=""></div>
+          <div id="u118_text" class="text ">
+            <p><span>Visit Form</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u119" class="ax_default heading_1">
+          <div id="u119_div" class=""></div>
+          <div id="u119_text" class="text ">
+            <p><span>Date &amp; Time</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u120" class="ax_default label">
+          <div id="u120_div" class=""></div>
+          <div id="u120_text" class="text ">
+            <p><span>Date:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u121" class="ax_default heading_1">
+          <div id="u121_div" class=""></div>
+          <div id="u121_text" class="text ">
+            <p><span>Areas Visited</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u122" class="ax_default label">
+          <div id="u122_div" class=""></div>
+          <div id="u122_text" class="text ">
+            <p><span>Floor Location:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u123" class="ax_default label">
+          <div id="u123_div" class=""></div>
+          <div id="u123_text" class="text ">
+            <p><span>Room Location:</span></p>
+          </div>
+        </div>
+
+        <!-- FloorInput (Droplist) -->
+        <div id="u124" class="ax_default droplist" data-label="FloorInput">
+          <div id="u124_div" class=""></div>
+          <select id="u124_input" class="u124_input">
+            <option class="u124_input_option" value="First Floor">First Floor</option>
+            <option class="u124_input_option" value="Second Floor">Second Floor</option>
+            <option class="u124_input_option" value="Third Floor">Third Floor</option>
+            <option class="u124_input_option" value="Fourth Floor">Fourth Floor</option>
+            <option class="u124_input_option" value="Fifth Floor">Fifth Floor</option>
+            <option class="u124_input_option" value="Sixth Floor">Sixth Floor</option>
+            <option class="u124_input_option" value="Seventh Floor">Seventh Floor</option>
+            <option class="u124_input_option" value="Eigth Floor">Eigth Floor</option>
+          </select>
+        </div>
+
+        <!-- RoomInput (Droplist) -->
+        <div id="u125" class="ax_default droplist" data-label="RoomInput">
+          <div id="u125_div" class=""></div>
+          <select id="u125_input" class="u125_input">
+            <option class="u125_input_option" value="Meeting Room A">Meeting Room A</option>
+            <option class="u125_input_option" value="Meeting Room B">Meeting Room B</option>
+            <option class="u125_input_option" value="Meeting Room C">Meeting Room C</option>
+            <option class="u125_input_option" value="Meeting Room D">Meeting Room D</option>
+            <option class="u125_input_option" value="Break Room 1">Break Room 1</option>
+            <option class="u125_input_option" value="Break Room 2">Break Room 2</option>
+            <option class="u125_input_option" value="Break Room 3">Break Room 3</option>
+          </select>
+        </div>
+
+        <!-- DateInput (Text Field) -->
+        <div id="u126" class="ax_default text_field" data-label="DateInput">
+          <div id="u126_div" class=""></div>
+          <input id="u126_input" type="text" value="" class="u126_input"/>
+        </div>
+
+        <!-- StartMinInput (Droplist) -->
+        <div id="u127" class="ax_default droplist" data-label="StartMinInput">
+          <div id="u127_div" class=""></div>
+          <select id="u127_input" class="u127_input">
+            <option class="u127_input_option" value="00">00</option>
+            <option class="u127_input_option" value="15">15</option>
+            <option class="u127_input_option" value="30">30</option>
+            <option class="u127_input_option" value="45">45</option>
+          </select>
+        </div>
+
+        <!-- EndMinInput (Droplist) -->
+        <div id="u128" class="ax_default droplist" data-label="EndMinInput">
+          <div id="u128_div" class=""></div>
+          <select id="u128_input" class="u128_input">
+            <option class="u128_input_option" value="00">00</option>
+            <option class="u128_input_option" value="15">15</option>
+            <option class="u128_input_option" value="30">30</option>
+            <option class="u128_input_option" value="45">45</option>
+          </select>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u129" class="ax_default label">
+          <div id="u129_div" class=""></div>
+          <div id="u129_text" class="text ">
+            <p><span>Hour:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u130" class="ax_default label">
+          <div id="u130_div" class=""></div>
+          <div id="u130_text" class="text ">
+            <p><span>Minute</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u131" class="ax_default image">
+        <img id="u131_img" class="img " src="images/verification/u3.png"/>
+        <div id="u131_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u132" class="ax_default image">
+        <img id="u132_img" class="img " src="images/verification/u17.png"/>
+        <div id="u132_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Calendar Picker (Group) -->
+      <div id="u133" class="ax_default" data-label="Calendar Picker" data-left="0" data-top="0" data-width="0" data-height="0">
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u134" class="ax_default text_area">
+        <div id="u134_div" class=""></div>
+        <textarea id="u134_input" class="u134_input">When entering a visit, the current date is automatically entered, this only needs to changed if entering a missed visit for a prior day.
+
+Please enter the time by selecting the hour and the nearest 15 minute interval prior to your entering the room.&nbsp; IE, if you enter a room at 1:25 PM, you would select 1: as your hour and 15 as your minute and finally PM for the time portion of you visit.
+
+Select the floor and room you are entering from the final two drop down boxes.
+
+Lastly review that all entries are correct and press the submit button.
+
+If any entires where made incorrectly or you need to adjust the end time of your visit, please visit the Personal History Log.
+</textarea>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u135" class="ax_default button">
+        <div id="u135_div" class=""></div>
+        <div id="u135_text" class="text ">
+          <p><span>Visit Form</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u136" class="ax_default button">
+        <img id="u136_img" class="img " src="images/personal_history_log/u85.svg"/>
+        <div id="u136_text" class="text ">
+          <p><span>Sign out</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u137" class="ax_default button">
+        <img id="u137_img" class="img " src="images/personal_history_log/u84.svg"/>
+        <div id="u137_text" class="text ">
+          <p><span>Case Form</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u138" class="ax_default button">
+        <img id="u138_img" class="img " src="images/visit_form/u138.svg"/>
+        <div id="u138_text" class="text ">
+          <p><span>Personal History Log</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u139" class="ax_default heading_1">
+        <div id="u139_div" class=""></div>
+        <div id="u139_text" class="text ">
+          <p><span>COVID - 19 Employee Log</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

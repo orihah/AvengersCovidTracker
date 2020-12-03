@@ -12,9 +12,14 @@
 }
 .box_1 {
 }
+.shape {
+}
 .image {
 }
 .button {
+}
+.primary_button {
+  color:#FFFFFF;
 }
 .heading_1 {
   font-family:'ArialMT', 'Arial', sans-serif;
@@ -119,7 +124,7 @@
   color:#000000;
   text-align:left;
 }
-.shape {
+.shape1 {
   font-size:13px;
   color:#000000;
 }
