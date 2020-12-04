@@ -167,16 +167,16 @@ public class MyController {
 					if(visitService.check((int)vis.get(i)[3],(int)pos.get(j)[3],(Timestamp)vis.get(i)[1], (Timestamp)vis.get(i)[2], (Timestamp)pos.get(j)[1],(Timestamp) pos.get(j)[2])) {
 					loginStatus = true;
 					currUser = name;
-					return "covid19_warning_page";
+					return "covid19_warning_page.html";
 					}
 				}
 			currUser = name;
 			loginStatus = true;
-			return "visit_form";
+			return "visit_form.html";
 		}
 		else
 			return
-					"verification";
+					"verification.html";
 		
 		
 	}
