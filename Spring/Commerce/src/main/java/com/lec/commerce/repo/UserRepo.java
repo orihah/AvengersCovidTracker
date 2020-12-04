@@ -23,6 +23,10 @@ public class UserRepo {
 		return em.createQuery("select n from User n where n.userName = :userName").setParameter("userName", userName).getResultList();
 		
 	}
+	public User findOne(String userName) {
+		
+		return em.find(User.class, findById(userName).get(0).getId());
+	}
 	
 	public void updateStatus(String userName, String date) {
 		String q = "update user set test_result = 1 where id = " + findById(userName).get(0).getId() + ";" ;

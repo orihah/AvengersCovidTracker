@@ -23,22 +23,27 @@ public class UserService {
 		return user.getId();
 	}
 	
-	public void statusUpdate(String userName, String date) {
+	public User getUser(String name) {
+		
+		return userRepo.findOne(name);
+	}
+	
+	public void statusUpdate(String name, String date) {
 		String reDate = date.split("/")[2] + "/" + date.split("/")[0] + "/" + date.split("/")[1];
 		//System.out.println(reDate);
-		userRepo.updateStatus(userName, reDate);
+		userRepo.updateStatus(name, reDate);
 	}
 	
 	public void statusReset() {
 		userRepo.resetStatus();
 	}
 	
-	public boolean verify(String userName, String password) {
-		List<User> users = userRepo.findById(userName);
+	public boolean verify(User user) {
+		List<User> users = userRepo.findById(user.getName());
 		if(users.isEmpty()) {
 			throw new IllegalStateException("no such id");
 		}
-		else if(users.get(0).getPassword().compareTo(password) == 0)
+		else if(users.get(0).getPassword().compareTo(user.getPassword()) == 0)
 			return true;
 		else
 		{
